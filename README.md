@@ -8,6 +8,11 @@
  Использовала:
  - Material UI (git push -u origin main)
  - React Router (https://reactrouter.com/web/guides/quick-start)
+ - react-redux(https://react-redux.js.org/)
+ - redux-thunk(https://github.com/reduxjs/redux-thunk)
+ - redux-saga(https://redux-saga.js.org/)
+
+
 
 
 
