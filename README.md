@@ -6,7 +6,7 @@
  Тут есть бекенд, который нужно запускать для работы приложения!
  
  Использовала:
- - Material UI (git push -u origin main)
+ - Material UI (https://material-ui.com/ru/)
  - React Router (https://reactrouter.com/web/guides/quick-start)
  - react-redux(https://react-redux.js.org/)
  - redux-thunk(https://github.com/reduxjs/redux-thunk)
