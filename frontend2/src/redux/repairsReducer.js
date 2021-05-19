@@ -1,4 +1,8 @@
-import { FETCH_REPAIRS_LIST, FETCH_SELECTED_REPAIR } from "./types";
+import {
+  FETCH_REPAIRS_LIST,
+  FETCH_SELECTED_REPAIR,
+  SET_SELECTED_REPAIR_ID,
+} from "./types";
 
 const initialState = {
   repairsList: [],
@@ -14,6 +18,12 @@ export const repairsReducer = (state = initialState, action) => {
         ...state,
         selectedRepair: action.payload,
       };
+    case SET_SELECTED_REPAIR_ID: {
+      return {
+        ...state,
+        selectedRepairId: action.payload,
+      };
+    }
     default:
       return state;
   }

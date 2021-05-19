@@ -1,7 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { fetchRepairDetails, hideAlert } from "../redux/actions";
+import {
+  fetchRepairDetails,
+  hideAlert,
+  setSelectedRepairId,
+} from "../redux/actions";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
@@ -63,8 +67,9 @@ const RepairDetails = () => {
   const alert = useSelector((state) => state.app.alert);
   const isLoading = useSelector((state) => state.app.loading);
   useEffect(() => {
+    dispatch(setSelectedRepairId(id));
     dispatch(fetchRepairDetails(id));
-  }, []);
+  }, [id]);
 
   if (alert) {
     return (

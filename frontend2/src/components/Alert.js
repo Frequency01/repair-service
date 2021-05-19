@@ -1,7 +1,8 @@
 import React from "react";
 import SnackbarContent from "@material-ui/core/SnackbarContent";
 import { makeStyles } from "@material-ui/core/styles";
-import { fetchRepairDetails, hideAlert } from "../redux/actions";
+import { fetchRepairDetails, hideAlert, fetchRepairs } from "../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 const useStyles = makeStyles({
@@ -44,9 +45,15 @@ const useStyles = makeStyles({
     },
   },
 });
-const Alert = ({ onReset, alert }) => {
+const Alert = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const alert = useSelector((state) => state.app.alert);
+  const id = useSelector((state) => state.repairs.selectedRepairId);
 
+  if (!alert) {
+    return <></>;
+  }
   return (
     <Grid
       container
@@ -69,7 +76,12 @@ const Alert = ({ onReset, alert }) => {
                 root: classes.buttonColor,
               }}
               onClick={() => {
-                onReset();
+                dispatch(hideAlert());
+                if (id) {
+                  dispatch(fetchRepairDetails(id));
+                } else {
+                  dispatch(fetchRepairs());
+                }
               }}
             >
               Повторить запрос
