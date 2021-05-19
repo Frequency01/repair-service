@@ -7,10 +7,10 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/:id">
+        <Route path="/:id">
           <RepairDetails />
         </Route>
-        <Route path="/">
+        <Route exact path="/">
           <Dashboard />
         </Route>
       </Switch>
