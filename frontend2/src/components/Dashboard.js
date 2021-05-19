@@ -26,7 +26,7 @@ const Dashboard = () => {
       {repairs.map((repair) => {
         return (
           <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={repair.id}>
-            <RepairCard repair={repair} key={repair.id} />
+            <RepairCard repair={repair} />
           </Grid>
         );
       })}

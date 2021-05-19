@@ -18,7 +18,6 @@ const useStyles = makeStyles({
     marginBottom: 12,
   },
   root: {
-    minWidth: 275,
     minWidth: "20rem",
     margin: "0.2rem",
     minHeight: "5vh",
